@@ -44,6 +44,7 @@ Ext.define('TheOpenDoor.controller.LoginController',{
 
 
     },
+
     handleSignInFbDataSend: function(userFbEmail){
         showSpinner("Signing In...");
         var me = this,
@@ -73,7 +74,7 @@ Ext.define('TheOpenDoor.controller.LoginController',{
         hideSpinner();        
     },
     handleGoogleSignIn: function() {
-        showSpinner("Signing In...");
+        showSpinner("Connecting to Google...");
         window.plugins.googleplus.login(
             {
               'iOSApiKey': '370422909165-4sr8egh09qdm62av5sh2npmi3emb076i.apps.googleusercontent.com'
@@ -87,6 +88,7 @@ Ext.define('TheOpenDoor.controller.LoginController',{
         )
     },
     handleFacebookSignIn: function(){
+        showSpinner("Connecting to facebook...");
         window.facebookConnectPlugin.login(["email","public_profile"], function(userData){this.userData = userData;},function (error) { alert("" + error) });
         window.facebookConnectPlugin.api("/me?fields=id,email", ["user_birthday"],this.fbsuccess,function (error) {alert("Failed: " + error);});
     },

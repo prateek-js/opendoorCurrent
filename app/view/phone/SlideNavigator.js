@@ -53,10 +53,10 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        		   items: [{
 	        			   xtype: 'toolbar',
 	        			   docked: 'top',
-	        			   title: 'Order Page',
+	        			   title: '<image src="resources/images/bulletpoint.jpg" class="center-toolbar-image">',
 	        			   cls: 'home-slider-toolbar',
 	        			   ui:'null'
-	        		   },{
+	        		   	},{
 	        			   xtype: 'OrderPageView',
 	        			   maskOnOpen: true
 	        		   }]
@@ -68,7 +68,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        		   items: [{
 	        			   xtype: 'toolbar',
 	        			   docked: 'top',
-	        			   title: 'All Orders',
+	        			   title: '<image src="resources/images/bulletpoint.jpg" class="center-toolbar-image">',
 	        			   cls: 'home-slider-toolbar',
 	        			   ui:'null'
 	        		   },{
@@ -83,7 +83,7 @@ Ext.define("TheOpenDoor.view.phone.SlideNavigator", {
 	        		   items: [{
 	        			   xtype: 'toolbar',
 	        			   docked: 'top',
-	        			   title: 'Your Profile',
+	        			   title: '<image src="resources/images/bulletpoint.jpg" class="center-toolbar-image">',
 	        			   cls: 'home-slider-toolbar',
 	        			   ui:'null'
 	        		   },{

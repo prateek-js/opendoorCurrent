@@ -81,6 +81,15 @@ Ext.application({
     launch: function() {
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
+        window.historyCount = 0;
+        if (Ext.os.is('Android')) {
+            var baseController = TheOpenDoor.app.getController('TheOpenDoor.controller.BaseController');
+            document.addEventListener("backbutton", Ext.bind(onBackKeyDown, this), false);  // add back button listener
+            function onBackKeyDown(e) {
+                e.preventDefault();
+                baseController.onAndroidBackClick();
+            }
+        }
     },
 
     onUpdated: function() {

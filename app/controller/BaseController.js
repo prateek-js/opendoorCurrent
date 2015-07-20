@@ -96,9 +96,7 @@ Ext.define('TheOpenDoor.controller.BaseController',{
      * @param storeId
      */
     onAndroidBackClick:function(){
-            /* Add the action here on the back button click*/
-        if(this.isLoggedIn()){
-        }
+        document.addEventListener("backbutton", onNativeBackKeyDown, false);
     },
     /**
      * @method login

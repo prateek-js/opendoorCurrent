@@ -37,7 +37,7 @@ Ext.define('TheOpenDoor.businessObject.LoginBO', {
         this.failureCb = failureCb;
         
         this.inputDetails = {
-                "emailId": userFbEmail.email,
+            "email_id": userFbEmail.email,
         };
         
         this.doLoginAjaxRequest();

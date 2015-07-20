@@ -23,5 +23,6 @@ Ext.define('TheOpenDoor.localization.LocaleEnglish', {
 	error_generic_retry : "Retry",
 
 	//web services success strings
-	profileSaveSuccess: "Profile Updated"
+	profileSaveSuccess: "Profile Updated",
+	profileDetails: "Profile Details",
 });

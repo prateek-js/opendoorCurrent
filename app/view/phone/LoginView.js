@@ -54,33 +54,35 @@ Ext.define('TheOpenDoor.view.phone.LoginView', {
                         }
                     }
                 }
-            },{
-                xtype: 'container',
-                itemId : 'facebookBtnContainer',
-                cls: 'google-btn-container',
-                layout: {
-                    type: 'hbox',
-                    align: 'center',
-                    pack: 'start'
-                },
-                items: [{
-                    xtype: 'image',
-                    src: 'resources/images/gplus.png',
-                    cls: 'login-via-google-image'
-                },{
-                    xtype: 'label',
-                    html: 'Login with Facebook',
-                    cls: 'login-via-google-label',
-                }],
-                listeners: {
-                    tap: {
-                        element: 'element',
-                        fn: function() {
-                            TheOpenDoor.app.getController('LoginController').handleFacebookSignIn();
-                        }
-                    }
-                }
-            }]            
+            }
+            // ,{
+            //     xtype: 'container',
+            //     itemId : 'facebookBtnContainer',
+            //     cls: 'google-btn-container',
+            //     layout: {
+            //         type: 'hbox',
+            //         align: 'center',
+            //         pack: 'start'
+            //     },
+            //     items: [{
+            //         xtype: 'image',
+            //         src: 'resources/images/gplus.png',
+            //         cls: 'login-via-google-image'
+            //     },{
+            //         xtype: 'label',
+            //         html: 'Login with Facebook',
+            //         cls: 'login-via-google-label',
+            //     }],
+            //     listeners: {
+            //         tap: {
+            //             element: 'element',
+            //             fn: function() {
+            //                 TheOpenDoor.app.getController('LoginController').handleFacebookSignIn();
+            //             }
+            //         }
+            //     }
+            // }
+            ]            
         }]
     }
 });

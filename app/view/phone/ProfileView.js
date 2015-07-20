@@ -13,38 +13,68 @@ Ext.define('TheOpenDoor.view.phone.ProfileView', {
             xtype: 'container',
             layout : {
                 type : 'vbox',
-                align : 'center',
+                align : 'start',
                 pack : 'center'
             },
             cls: 'dashboard-view-container',
             items:[{
                 xtype: 'label',
                 cls: 'profile-details-label',
-                html: 'Edit Your Profile Details'
+                html: localeString.profileDetails
             },{
-                xtype: 'textfield',
-                itemId: 'nameProfileField',
-                placeHolder: 'Name',
-                cls: 'other-textfield'
+                xtype: 'container',
+                layout: 'hbox',
+                cls: 'icon-field-container',
+                items:[{
+                    xtype: 'image',
+                    src: '',
+                    cls: 'name-icon'
+                },{
+                    xtype: 'textfield',
+                    itemId: 'nameProfileField',
+                    iconCls: 'homeicon',
+                    iconMask: true,
+                    placeHolder: 'Name',
+                    cls: 'other-textfield'
+                }]                
             },{
-                xtype: 'emailfield',
-                name: 'email',
-                cls: 'other-textfield',
-                readOnly: true,
-                itemId: 'emailProfileFieldId'                    
+                xtype: 'container',
+                layout: 'hbox',
+                cls: 'icon-field-container',
+                items:[{
+                    xtype: 'image',
+                    src: '',
+                    cls: 'email-icon'
+                },{
+                    xtype: 'emailfield',
+                    name: 'email',
+                    cls: 'other-textfield',
+                    readOnly: true,
+                    itemId: 'emailProfileFieldId'
+                }]                                    
             },{
-                xtype: 'numberfield',
-                cls: 'other-textfield',
-                readOnly: true,
-                name: 'ContactNumber',
-                itemId : 'mobileNumberProfileField'
-            },{
-                xtype: 'button',
-                ui: 'plain',
-                text: 'Save',
-                itemId: 'saveProfileButton',
-                cls: 'save-button'
+                xtype: 'container',
+                layout: 'hbox',
+                cls: 'icon-field-container',
+                items:[{
+                    xtype: 'image',
+                    src: '',
+                    cls: 'number-icon'
+                },{
+                    xtype: 'numberfield',
+                    cls: 'other-textfield',
+                    readOnly: true,
+                    name: 'ContactNumber',
+                    itemId : 'mobileNumberProfileField'
+                }]                
             }]
+        },{
+            xtype: 'button',
+            ui: 'plain',
+            text: 'Save',
+            docked: 'bottom',
+            itemId: 'saveProfileButton',
+            cls: 'save-button'
         }]           
     }
 });

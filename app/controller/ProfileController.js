@@ -45,7 +45,6 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
 
     handleSaveProfileButtonTap: function(){
         showSpinner(localeString.loading);
-        
         var profileData = {};
         profileData.phone_number = this.getMobileNumberProfileField().getValue();
         profileData.name = this.getNameProfileField().getValue();
@@ -64,8 +63,7 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
             scope:this,
             success : function(responseObj) {
                 try{
-                    var decodedObj = responseObj.status;
-                    if (decodedObj == 200) {
+                    if (responseObj.status == 200 && responseObj.statusText == "OK") {
                         AppMessage.showMessageBox(6,null,null,localeString.profileSaveSuccess);
                         hideSpinner();
                     }
@@ -79,7 +77,7 @@ Ext.define('TheOpenDoor.controller.ProfileController',{
             },                                    
             failure : function(responseObj) {
                 var decodedObj = (responseObj.statusText);
-                errorHandled = this.genericErrorCheck(responseObj, false);
+                errorHandled = genericErrorCheck(responseObj, false);
                 if(!errorHandled){
                     var errorText = "Error";
                     AppMessage.showMessageBox(4,null,null,localeString.errorInGettingResponse);

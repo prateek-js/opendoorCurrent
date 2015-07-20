@@ -40,7 +40,7 @@ Ext.define('TheOpenDoor.controller.DashboardController',{
         var dashboardStore = Ext.getStore('DashboardStore');
         dashboardStore.addToStore(dashboardAddressData);      
         Ext.Ajax.request({
-            url: 'UrlHelper.getServerUrl().profile',
+            url: UrlHelper.getServerUrl().profile,
             method: 'PUT',          
             headers: {'Content-Type': 'text/json'},
             waitTitle: 'Connecting',
@@ -53,8 +53,7 @@ Ext.define('TheOpenDoor.controller.DashboardController',{
             scope:this,
             success : function(responseObj) {
                 try{
-                    var decodedObj = (responseObj.responseText && responseObj.responseText.length) ?  Ext.decode (responseObj.responseText) : null;
-                    if (Ext.isObject(decodedObj)) {
+                    if (responseObj.status == 200 && responseObj.statusText == "OK") {
                         this.isloggedIn = true;
                         localStorage.removeItem('loggedInFlag');
                         localStorage.setItem('loggedInFlag', this.isloggedIn);
@@ -79,7 +78,7 @@ Ext.define('TheOpenDoor.controller.DashboardController',{
                 // var respObj = Ext.JSON.decode(response.responseText);
                 // Ext.Msg.alert("Error", respObj.status.statusMessage);
                 var decodedObj = (responseObj.statusText);
-                errorHandled = this.genericErrorCheck(responseObj, false);
+                errorHandled = genericErrorCheck(responseObj, false);
                 if(!errorHandled){
                     var errorText = "Error";
                     AppMessage.showMessageBox(4,null,null,localeString.errorInGettingResponse);
